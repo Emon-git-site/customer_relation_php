@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Create User Ticket";
+$pageTitle = "Profile";
 ob_start(); // Start output buffering
 ?>
 
@@ -8,32 +8,34 @@ ob_start(); // Start output buffering
   <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="card card-light m-3">
-      <!-- form start -->
+
       <form class="form-horizontal m-3" action="" method="post">
         <div class="card-body ">
 
           <div class="form-group row">
-            <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+            <label for="user_name" class="col-sm-2 col-form-label">User Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="subject" id="subject">
+              <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Enter Your Name">
             </div>
           </div>
           <div class="form-group row">
-            <label for="phone_no" class="col-sm-2 col-form-label">Task Type</label>
+            <label for="user_email" class="col-sm-2 col-form-label">Email Address</label>
             <div class="col-sm-10">
-              <select class="form-control">
-                <option value="">Select your Task Type</option>
-                <option value="">Female</option>
-                <option value="other">other</option>
-              </select>
+              <input type="email" class="form-control" name="user_email" id="user_email" placeholder="Enter Email Address">
             </div>
           </div>
           <div class="form-group row">
-            <label for="phone_no" class="col-sm-2 col-form-label">Priority</label>
+            <label for="phone_no" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="phone_no" id="phone_no" placeholder="Enter Phone Number">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="phone_no" class="col-sm-2 col-form-label">Gender</label>
             <div class="col-sm-10">
               <select class="form-control">
-                <option value="">Choose your Priority</option>
-                <option value="">Female</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
                 <option value="other">other</option>
               </select>
             </div>
@@ -58,8 +60,8 @@ ob_start(); // Start output buffering
 
   </div><!-- /.container-fluid -->
 </section>
-
 <?php
 $content = ob_get_clean(); // Get the buffered content and clean the buffer
 require_once "master.php"; // Include the master template
 ?>
+

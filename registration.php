@@ -28,7 +28,7 @@
                                     title: "Oops...",
                                     text: "Passwords do not match!",
                                 }).then(function() {
-                                    window.location.href = "user_registration.php";
+                                    window.location.href = "registration";
                                 });
                             });
                         </script>';
@@ -42,23 +42,36 @@
                             title: "Oops...",
                             text: "Email already exit!",
                         }).then(function() {
-                            window.location.href = "user_registration.php";
+                            window.location.href = "index.php";
                         });
                     });
                 </script>';
                 }
                 // user registration successfull message
                 if (isset($_GET['registration'])) {
-                    echo '<script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Swal.fire({
-                            title: "Successful",
-                            text: "User registration successfully done!",
+                    echo "<script>
+                     document.addEventListener('DOMContentLoaded', function() {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+            
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'User Registration successful  successfull'
                         }).then(function() {
-                            window.location.href = "user_registration.php";
+                            window.location.href = 'index.php';
                         });
                     });
-                </script>';
+                  </script>";
+            
                 }
 
                 ?>
@@ -153,7 +166,7 @@
                 isshow = !isshow;
             });
         });
-        // user email availability checking 
+        // user email validity checking 
         $(document).ready(function() {
             $('#user_email').on('input', function() {
                 let email = $(this).val();
@@ -169,7 +182,7 @@
                 }
             });
         });
-        // user password availability
+        // user email availability
         $(document).ready(function() {
             $('#user_email').blur(function(){
                 let email = $(this).val();

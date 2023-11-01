@@ -15,7 +15,7 @@ if(isset($_POST['user_email'])){
 
         }else{
             echo " the email is available ";
-            echo "<script>$('#user_registration_btn').prop('disabled',true);</script>";
+            echo "<script>$('#user_registration_btn').prop('disabled',false);</script>";
 
         }
     }
