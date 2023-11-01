@@ -39,14 +39,14 @@
                            icon: 'success',
                            title: 'Signed in successfully'
                        }).then(function() {
-                           window.location.href = 'change_password_user.php';
+                           window.location.href = 'view/user/change_password.php';
                        });
                    });
                  </script>";
                 }
                 ?>
                 <!-- form start -->
-                <form action="function/user_login_f.php" method="post">
+                <form action="function/user/login.php" method="post">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="user_email">Email address</label>
@@ -55,9 +55,7 @@
                         <div class="form-group">
                             <label for="user_password">Password</label>
                             <input type="password" class="form-control" name="user_password" id="user_password" placeholder="Enter Password">
-                        </div>
-                     
-                       
+                        </div>   
                     </div>
                     <!-- /.card-body -->
 
