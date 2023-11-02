@@ -28,7 +28,7 @@
 
 
             <li class="nav-item">
-              <a href="dashboard.php" class="nav-link<?= activeMenu('dashboard.php') ?>">
+              <a href="dashboard.php" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
