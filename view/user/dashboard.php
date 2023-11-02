@@ -1,9 +1,8 @@
 <?php
 $pageTitle = "Dashboard";
 
-ob_start(); // Start output buffering
-?>
-
+ob_start(); 
+ ?>
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
@@ -81,9 +80,10 @@ ob_start(); // Start output buffering
     <!-- /.col -->
   </div><!-- /.container-fluid -->
 </section>
-<?php
-$content = ob_get_clean(); // Get the buffered content and clean the buffer
-require_once "master.php"; // Include the master template
-?>
 
+
+<?php
+$content = ob_get_clean(); 
+require_once "master.php"; 
+?>
 

@@ -36,6 +36,7 @@ if(isset($_POST['user_login_btn'])){
         VALUES ('$logindate', '$logintime', '$user_id', '$user_name', '$user_email', '$ip_address', '$mac_address', '$user_city', '$user_country')";
         $insert_query_run = mysqli_query($con, $insert_query);
         if($insert_query_run){
+           
             header('location: ../../index.php?user_log=yes'); 
             
         } 

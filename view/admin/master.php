@@ -1,7 +1,9 @@
 <?php
-ob_start(); // Start output buffering
+ob_start();
 ?>
+
 <div class="wrapper">
+    <h1>testsvbnvbne</h1>
         <?php require_once "../includes/admin/navbar.php" ?>
         <?php require_once "../includes/admin/asidebar.php" ?>
         <div class="content-wrapper">
@@ -10,9 +12,11 @@ ob_start(); // Start output buffering
         </div>
     </div>
   
-
+  
 <?php
-$main = ob_get_clean(); // Get the buffered content and clean the buffer
-require_once "../layout.php"; // Include the master template
+
+$main = ob_get_clean(); 
+require_once "../layout.php"; 
 ?>
+
 
