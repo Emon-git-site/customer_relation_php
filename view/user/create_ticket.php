@@ -9,7 +9,7 @@ ob_start(); // Start output buffering
     <!-- Small boxes (Stat box) -->
     <div class="card card-light m-3">
       <!-- form start -->
-      <form class="form-horizontal m-3" action="" method="post">
+      <form class="form-horizontal m-3" action="../../function/user/create_ticket.php" method="post">
         <div class="card-body ">
 
           <div class="form-group row">

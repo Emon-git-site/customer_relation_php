@@ -28,7 +28,7 @@
 
 
             <li class="nav-item">
-              <a href="dashboard.php" class="nav-link">
+              <a href="dashboard.php" class="nav-link <?= activeMenu('dashboard.php') ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -37,7 +37,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="change_password.php" class="nav-link">
+              <a href="change_password.php" class="nav-link <?= activeMenu('change_password.php') ?>">
                 <i class="nav-icon fas fa-lock"></i>
                 <p>
                   Change Password
@@ -45,7 +45,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="users_manage.php" class="nav-link">
+              <a href="users_manage.php" class="nav-link <?= activeMenu('users_manage.php') ?>">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Users
@@ -53,7 +53,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="manage_ticket.php" class="nav-link">
+              <a href="add_services.php" class="nav-link <?= activeMenu('add_services.php') ?>">
+                <i class="nav-icon fab fa-servicestack"></i>
+                <p>
+                  Add Services
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="manage_ticket.php" class="nav-link <?= activeMenu('manage_ticket.php') ?>">
                 <i class="nav-icon fas fa-ticket-alt"></i>
                 <p>
                   Manage Ticket
@@ -61,7 +69,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="manage_quote.php" class="nav-link">
+              <a href="manage_quote.php" class="nav-link <?= activeMenu('manage_quote.php') ?>">
                 <i class="nav-icon fas fa-envelope"></i>
                 <p>
                   Manage Quotes
@@ -69,7 +77,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="user_access_log.php" class="nav-link">
+              <a href="user_access_log.php" class="nav-link <?= activeMenu('user_access_log.php') ?>">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   User Access Log
@@ -84,3 +92,16 @@
       </div>
       <!-- /.sidebar -->
     </aside>
+    
+<?php 
+// active side bar code
+function activeMenu($parameater){  
+  
+  $urlParts = explode('/', $_SERVER['PHP_SELF']);
+  $currentPage = end($urlParts);
+
+  if ($parameater == $currentPage) {
+      return "active";
+  }
+}
+?>

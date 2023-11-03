@@ -7,4 +7,6 @@
   <link rel="stylesheet" href="../../assets/plugins/daterangepicker/daterangepicker.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
   <link rel="stylesheet" href="../../assets/dist/css/adminlte.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>

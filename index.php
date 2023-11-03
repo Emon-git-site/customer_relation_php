@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in (v2)</title>
+    <title>CRM-user signin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,30 +27,57 @@
                 <a href="../../index2.html" class="h1">User Sign</a>
             </div>
             <?php
-            if (isset($_GET['user_log'])) {
-                echo "<script>
- document.addEventListener('DOMContentLoaded', function() {
-     const Toast = Swal.mixin({
-         toast: true,
-         position: 'top-end',
-         showConfirmButton: false,
-         timer: 3000,
-         timerProgressBar: true,
-         didOpen: (toast) => {
+            // user login successfull message show
+            if (isset($_GET['user_log']) && $_GET['user_log'] == "yes") {       
+            echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
              toast.addEventListener('mouseenter', Swal.stopTimer)
              toast.addEventListener('mouseleave', Swal.resumeTimer)
-         }
-     })
+           }
+         })
 
-     Toast.fire({
-         icon: 'success',
-         title: 'Login successful',
-     }).then(function() {
-      window.location.href = 'view/user/change_password.php';
-     });
- });
- </script>";
-            } ?>
+            Toast.fire({
+                icon: 'success',
+                title: 'Login successful',
+            }).then(function() {
+            window.location.href = 'view/user/change_password.php';
+            });
+         });
+          </script>";
+            } 
+        // user login fail message
+        if (isset($_GET['user_log']) && $_GET['user_log'] == "no") {       
+           echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+             toast.addEventListener('mouseenter', Swal.stopTimer)
+             toast.addEventListener('mouseleave', Swal.resumeTimer)
+           }
+         })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Login failed',
+            }).then(function() {
+            window.location.href = 'index.php';
+            });
+         });
+          </script>";
+            } 
+            ?>
 
 
             <div class="card-body">
@@ -92,7 +119,7 @@
 
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    <a href="#">I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="view/user/registration.php" class="text-center">Register a new membership</a>
@@ -130,6 +157,13 @@
                 isshow = !isshow;
             });
         });
+
+
+    // JavaScript code to focus on the email input field when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('user_email').focus();
+    });
+
     </script>
 </body>
 

@@ -1,5 +1,12 @@
 <?php
-ob_start();
+ob_start(); 
+if (!isset($_SESSION)) {
+    session_start();
+}
+if(empty($_SESSION['admin_email'])){
+    header('location: index.php') ;
+}
+
 ?>
 
 <div class="wrapper">

@@ -134,21 +134,23 @@
 
     <script>
     //   jacascript password match checking
-        $('#conform_password').keyup(function() {
-            let user_password = $('#user_password').val();
-            let conform_password = $('#conform_password').val();
-            if (user_password !== conform_password) {
-                $('#pass_not_match').html('**passwords do not match');
-                $('#pass_not_match').css('color', 'red');
-                return false;
-            }else if(conform_password == ''){
-                $('#pass_not_match').html(''); 
-            }else {
-                $('#pass_not_match').html('password matched'); 
-                $('#pass_not_match').css('color', 'green');
-                return true;
-            }
+            $(document).ready(function() {
+            $('#conform_password').keyup(function() {
+                let new_password = $('#new_password').val();
+                let conform_password = $('#conform_password').val();
+
+                if (new_password !== conform_password) {
+                    $('#pass_match').html('**passwords do not match');
+                    $('#pass_match').css('color', 'red');
+                } else if (conform_password == '') {
+                    $('#pass_match').html('');
+                } else {
+                    $('#pass_match').html('password matched');
+                    $('#pass_match').css('color', 'green');
+                }
+            });
         });
+
 
         // javascript password visibility show and hidden
         $(document).ready(function() {
@@ -188,7 +190,7 @@
             $('#user_email').blur(function(){
                 let email = $(this).val();
             $.ajax({
-                url: "check_email_availability.php",
+                url: "../../function/user/check_email_availability.php",
                 data:{user_email:email},
                 type: "post",
                 success: function(message){

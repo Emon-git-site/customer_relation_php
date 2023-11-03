@@ -14,24 +14,24 @@
 <?php require_once "../includes/footer.php" ?>
 <?php require_once "../includes/js/js.php" ?>
     <script>
-        (function($) {
+    //    javascript password laoding
+       $(document).ready(function() {
+       $('#conform_password').keyup(function() {
+        let new_password = $('#new_password').val();
+        let conform_password = $('#conform_password').val();
 
-            $('#conform_password').keyup(function() {
-                let new_password = $('#new_password').val();
-                let conform_password = $('#conform_password').val();
+        if (new_password !== conform_password) {
+            $('#pass_match').html('**passwords do not match');
+            $('#pass_match').css('color', 'red');
+        } else if (conform_password == '') {
+            $('#pass_match').html('');
+        } else {
+            $('#pass_match').html('password matched');
+            $('#pass_match').css('color', 'green');
+        }
+    });
+});
 
-                if (new_password !== conform_password) {
-                    $('#pass_match').html('**passwords do not match');
-                    $('#pass_match').css('color', 'red');
-                } else if (conform_password == '') {
-                    $('#pass_match').html('');
-                } else {
-                    $('#pass_match').html('password matched');
-                    $('#pass_match').css('color', 'green');
-                }
-            });
-
-        })(jQuery);
        
          
     </script>

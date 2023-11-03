@@ -1,4 +1,13 @@
-
+<?php 
+if (!isset($_SESSION)) {
+  session_start();
+}
+$user_email =  $_SESSION['user_email'] ;
+require_once "../../config/connection.php";
+$select_userdata_query = "SELECT * FROM `user` WHERE `email` = '$user_email'";
+$select_userdata_query_run = mysqli_query($con, $select_userdata_query);
+$row = mysqli_fetch_assoc($select_userdata_query_run);
+?>
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
@@ -15,7 +24,7 @@
             <img src="../../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">User Name</a>
+            <a href="#" class="d-block"><?=$row['name'] ?></a>
           </div>
         </div>
 
@@ -88,7 +97,7 @@
 
 
 <?php 
-
+// active side bar code
 function activeMenu($parameater){  
   
   $urlParts = explode('/', $_SERVER['PHP_SELF']);
@@ -98,5 +107,4 @@ function activeMenu($parameater){
       return "active";
   }
 }
-
 ?>
