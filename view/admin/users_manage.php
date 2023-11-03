@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Manage Users";
-ob_start(); // Start output buffering
+ob_start(); 
+require_once "../../config/connection.php";
 ?>
 
       <!-- Main content -->
@@ -24,7 +25,23 @@ ob_start(); // Start output buffering
                     </tr>
                   </thead>
                   <tbody>
-            
+                  <?php
+                  $count = 1;
+                   $select_user_query =  "SELECT * FROM `user` ";
+                   $select_user_query_run = mysqli_query($con, $select_user_query);
+                   while($row = mysqli_fetch_assoc($select_user_query_run)){?>
+                   <tr>
+                    <td class="text-center"><?= $count ?></td>
+                    <td class="text-center"><?=$row['name'] ?></td>
+                    <td class="text-center"><?=$row['email'] ?></td>
+                    <td class="text-center"><?=$row['mobile'] ?></td>
+                    <td class="text-center">
+                    <a href="#" class="btn btn-primary">EDIT</a>
+                    <a href="#" class="btn btn-danger">DELETE</a>
+                    </td>
+                   </tr>
+                   <?php $count++; } ?>
+
                   </tbody>
                 </table>
               </div>

@@ -7,9 +7,7 @@ ob_start();
 <section class="content">
     <div class="container-fluid">
     <div class="card card-light m-3">
-        <div class="card-header mx-auto mt-2">
-        <h3 class="card-title ">Add services</h3>
-        </div>
+      
 
         <?php
         if(isset($_GET['add_service'])){
@@ -32,9 +30,9 @@ ob_start();
         <div class="card-body ">
             
             <div class="form-group row">
-            <label for="add_service" class="col-sm-2 col-form-label">Add Services</label>
+            <label for="add_service" class="col-sm-2 col-form-label">Services Name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="add_service" id="add_service" placeholder="Enter New Services">
+                <input type="text" class="form-control" name="add_service" id="add_service" placeholder="Enter New Services" required>
             </div>
             </div> 
         </div>

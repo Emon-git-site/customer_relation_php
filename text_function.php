@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../../config/connection.php"; 
+require_once "config/connection.php"; 
 if(isset($_POST['user_login_btn'])){
   
     $user_email = mysqli_escape_string($con, $_POST['user_email']);
@@ -37,10 +37,8 @@ if(isset($_POST['user_login_btn'])){
         VALUES ('$logindate', '$logintime', '$user_id', '$user_name', '$user_email', '$ip_address', '$mac_address', '$user_city', '$user_country')";
         $insert_query_run = mysqli_query($con, $insert_query);
         if($insert_query_run){
-            header('location: ../../index.php?user_log=yes');   
+            header('location: test.php');   
         }
-    } else{
-        header('location: ../../index.php?user_log=no');   
-    }
+    } 
     }
 ?>

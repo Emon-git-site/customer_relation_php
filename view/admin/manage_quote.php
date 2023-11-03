@@ -37,7 +37,6 @@ require_once "../../config/connection.php";
                       <td class="text-center"><?=$row['services'] ?></td>
                       <td class="text-center">
                         <a href="#" class="btn btn-primary">EDIT</a>
-                        <a href="#" class="btn btn-danger">DELETE</a>
                       </td>
                     </tr>
                     <?php $count++; } ?>
