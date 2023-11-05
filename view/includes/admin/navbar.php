@@ -1,6 +1,6 @@
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+      <img class="animation__shake" src="../../assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
     </div>
 
     <!-- Navbar -->
@@ -23,12 +23,9 @@
             <i class="fas fa-cog fa-lg"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-md dropdown-menu-left">
-            <a class="dropdown-item text-center "><i class="fas fa-user-alt mr-2"></i>My Profile</a>
-            <div class="dropdown-divider"></div>
             <a href="../../function/admin/logout.php" class="dropdown-item text-center">
               <i class="fas fa-power-off mr-2"></i>Log out
             </a>
-            <div class="dropdown-divider"></div>
           </div>
         </li>
 

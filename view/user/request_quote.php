@@ -76,7 +76,7 @@ require_once "../../config/connection.php";
               <label for="<?= $row['services'] ?>" class="font-weight-normal">
                 <input type="checkbox" class="font-weight-normal" id="<?= $row['services'] ?>" name="service[]" value="<?= $row['services'] ?>" > <?= $row['services'] ?>
               </label>
-            </div>
+            </div>                                                                       
             <?php
               if ($counter % 2 != 0) {
                  echo '</div>';

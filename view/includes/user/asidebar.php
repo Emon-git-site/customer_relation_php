@@ -70,7 +70,7 @@ $row = mysqli_fetch_assoc($select_userdata_query_run);
               </a>
             </li>
             <li class="nav-item">
-              <a href="cricket_ticket.php" class="nav-link <?= activeMenu('cricket_ticket.php') ?>">
+              <a href="create_ticket.php" class="nav-link <?= activeMenu('create_ticket.php') ?>">
                 <i class="nav-icon fas fa-ticket-alt"></i>
                 <p>
                  Create Ticket

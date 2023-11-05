@@ -9,9 +9,7 @@ require_once "../../config/connection.php";
       <section class="content">
         <div class="container-fluid">
         <div class="card">
-              <div class="card-header mx-auto">
-                <h3 class="card-title ">Manage Users</h3>
-              </div>
+
               <!-- /.card-header -->
               <div class="card-body">
                 <table class="table table-bordered">

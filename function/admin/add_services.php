@@ -15,4 +15,14 @@ if(isset($_POST['add_services_btn'])){
     }
 }
 
+// delete services
+if(isset($_GET['service_id'])){
+$service_id = $_GET['service_id'];
+
+$delete_services = " DELETE FROM `services` WHERE `id` = '$service_id'";
+$delete_services_run = mysqli_query($con, $delete_services);
+if($delete_services_run){
+    header('location: ../../view/admin/add_services.php?delete_service=yes');   
+}
+}
 ?>

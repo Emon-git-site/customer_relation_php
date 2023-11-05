@@ -1,6 +1,20 @@
 <?php
 $pageTitle = "Create User Ticket";
 ob_start(); // Start output buffering
+
+if(isset($_GET['create_ticket'])){
+  echo '<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      Swal.fire({
+          icon: "success",
+          title: "successful",
+          text: "Create Ticket Successfully!",
+      }).then(function() {
+        window.location.href = "create_ticket.php";
+        });;
+  });
+</script>';;
+}
 ?>
 
 <!-- Main content -->
@@ -21,9 +35,10 @@ ob_start(); // Start output buffering
           <div class="form-group row">
             <label for="phone_no" class="col-sm-2 col-form-label">Task Type</label>
             <div class="col-sm-10">
-              <select class="form-control">
+              <select class="form-control" name="task_type">
                 <option value="">Select your Task Type</option>
-                <option value="">Female</option>
+                <option value="personal">personal</option>
+                <option value="public">public</option>
                 <option value="other">other</option>
               </select>
             </div>
@@ -31,25 +46,25 @@ ob_start(); // Start output buffering
           <div class="form-group row">
             <label for="phone_no" class="col-sm-2 col-form-label">Priority</label>
             <div class="col-sm-10">
-              <select class="form-control">
+              <select class="form-control" name="priority">
                 <option value="">Choose your Priority</option>
-                <option value="">Female</option>
+                <option value="urgent">urgent</option>
+                <option value="fast">fast</option>
                 <option value="other">other</option>
               </select>
             </div>
           </div>
           <div class="form-group row">
-            <label for="phone_no" class="col-sm-2 col-form-label">User Address</label>
+            <label for="phone_no" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
-              <textarea class="form-control" rows="3" name="user_address"></textarea>
+              <textarea class="form-control" rows="3" name="description"></textarea>
             </div>
           </div>
 
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="submit" class="btn btn-info" name="change_password_btn">SUBMIT</button>
-          <button type="submit" class="btn btn-default float-right">CLEAR FORM</button>
+        <div class="card-footer d-flex justify-content-center">
+          <button type="submit" class="btn btn-info" name="create_ticket_btn">CREATE</button>
         </div>
         <!-- /.card-footer -->
       </form>

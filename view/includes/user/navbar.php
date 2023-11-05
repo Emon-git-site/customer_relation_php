@@ -23,7 +23,7 @@
             <i class="fas fa-cog fa-lg"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-md dropdown-menu-left">
-            <a href="#" class="dropdown-item text-center "><i class="fas fa-user-alt mr-2"></i>My Profile</a>
+            <a href="profile.php" class="dropdown-item text-center "><i class="fas fa-user-alt mr-2"></i>My Profile</a>
             <div class="dropdown-divider"></div>
             <a href="../../function/user/logout.php" class="dropdown-item text-center">
               <i class="fas fa-power-off mr-2"></i>Log out

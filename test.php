@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php 
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,33 +27,39 @@
             <div class="card-header text-center">
                 <a href="../../index2.html" class="h1">Userfgd Sign</a>
             </div>
+
             <?php
             // user login successfull message show
-            if(isset($_POST['user_login_btn'])){
-              echo "<script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-             toast.addEventListener('mouseenter', Swal.stopTimer)
-             toast.addEventListener('mouseleave', Swal.resumeTimer)
-           }
-         })
+            // if (isset($_GET['user_log']) && $_GET['user_log'] == "yes") {       
 
-            Toast.fire({
-                icon: 'succsdfsdess',
-                title: 'Login succeshjgjhsful',
-            })
-         });
-          </script>";
-            } 
-     
-            ?>
+            // if(isset($_POST['user_login_btn'])){
+        //       echo "<script>
+        //     document.addEventListener('DOMContentLoaded', function() {
+        //     const Toast = Swal.mixin({
+        //     toast: true,
+        //     position: 'top-end',
+        //     showConfirmButton: false,
+        //     timer: 3000,
+        //     timerProgressBar: true,
+        //     didOpen: (toast) => {
+        //      toast.addEventListener('mouseenter', Swal.stopTimer)
+        //      toast.addEventListener('mouseleave', Swal.resumeTimer)
+        //    }
+        //  })
 
+        //     Toast.fire({
+        //         icon: 'succsdfsdess',
+        //         title: 'Login succeshjgjhsful',
+        //     })
+        //  });
+        //   </script>";
+        //     } 
+       
+           
+        //     echo '<h1>test</h1>';
+
+        // }
+        //     ?>
 
             <div class="card-body">
                 <p class="login-box-msg">Sign in dfgdfgto get your services</p>
@@ -114,29 +121,47 @@
     <!-- AdminLTE App -->
     <script src="assets/dist/js/adminlte.min.js"></script>
     <script>
-        // javascript password visibility show and hidden
-        $(document).ready(function() {
-            let user_password = $('#user_password');
-            let visibility = $('.visibility');
-            let isshow = true;
-
-            visibility.click(function() {
-                if (isshow) {
-                    user_password.attr('type', 'text');
-                    visibility.text('visibility');
-                } else {
-                    user_password.attr('type', 'password');
-                    visibility.text('visibility_off');
-                }
-                isshow = !isshow;
-            });
-        });
 
 
-    // JavaScript code to focus on the email input field when the page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('user_email').focus();
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
     });
+
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+
+
+    //     // javascript password visibility show and hidden
+    //     $(document).ready(function() {
+    //         let user_password = $('#user_password');
+    //         let visibility = $('.visibility');
+    //         let isshow = true;
+
+    //         visibility.click(function() {
+    //             if (isshow) {
+    //                 user_password.attr('type', 'text');
+    //                 visibility.text('visibility');
+    //             } else {
+    //                 user_password.attr('type', 'password');
+    //                 visibility.text('visibility_off');
+    //             }
+    //             isshow = !isshow;
+    //         });
+    //     });
+
+
+    // // JavaScript code to focus on the email input field when the page loads
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     document.getElementById('user_email').focus();
+    // });
 
     </script>
 </body>

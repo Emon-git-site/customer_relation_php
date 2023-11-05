@@ -10,7 +10,6 @@ if(empty($_SESSION['admin_email'])){
 ?>
 
 <div class="wrapper">
-    <h1>testsvbnvbne</h1>
         <?php require_once "../includes/admin/navbar.php" ?>
         <?php require_once "../includes/admin/asidebar.php" ?>
         <div class="content-wrapper">

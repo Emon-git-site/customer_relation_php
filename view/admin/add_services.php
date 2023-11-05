@@ -1,5 +1,6 @@
 <?php
 $pageTitle = "Add Services";
+require_once "../../config/connection.php";
 ob_start(); 
 ?>
 
@@ -22,6 +23,18 @@ ob_start();
             });
           </script>';;
           }
+        if(isset($_GET['delete_service'])){
+            echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    title: "Successfull",
+                    text: "You delete new service!",
+                }).then(function() {
+                  window.location.href = "add_services.php";
+                  });;
+            });
+          </script>';;
+          }
           
         ?>
         <!-- /.card-header -->
@@ -34,7 +47,7 @@ ob_start();
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="add_service" id="add_service" placeholder="Enter New Services" required>
             </div>
-            </div> 
+            </div> <!--row -->
         </div>
         <!-- /.card-body -->
         <div class=" d-flex justify-content-center">
@@ -42,27 +55,36 @@ ob_start();
         </div>
         <!-- /.card-footer -->
         </form>
-    </div>  
-    <div class="col-md-12">
-            <div class="card card-secondary">
-              <div class="card-header" >
-                <h3 class="card-title text-center">Show Services</h3>
+        <hr>
+        <table class="table table-bordered ">
+                  <thead>
+                    <tr>
+                      <th class="text-center">SERVICES ID</th>
+                      <th class="text-center">SERVICES NAME</th>
+                      <th class="text-center">ACTION</th>
+                   </tr>
+                  </thead>
+                  <?php  
+                    $select_services = "SELECT * FROM services";
+                    $select_services_run = mysqli_query($con, $select_services);
+                    while($row = mysqli_fetch_assoc($select_services_run)){   ?>
+                  <tr>
+                    <td class="text-center">#SER-<?=$row['id']?></td>
+                    <td class="text-center"><?=$row['services']?></td>
+                    <td class="text-center">
+                      <a href="../../function/admin/add_services.php?service_id=<?=$row['id']?>"  class="btn btn-danger" onclick="alert('Are you sure to delete???')">DELETE</a>
+                    </td>
+                  </tr>
+                  <?php } ?>
+                    <tbody>
+            
+                  </tbody>
+                </table>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body" style="display: block;">
-                The body of the card
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-    </div>
+    </div>  
+    
+</div>
+
 </section>
 
 <?php
